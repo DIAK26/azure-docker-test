@@ -17,7 +17,7 @@ def home():
         <style>
             body {
                 /* Ersetze 'hintergrund.jpg' durch deinen Dateinamen */
-                background-image: url('LandingRage');
+                background-image: url('LandingRage.jpg');
                 background-size: cover;       /* Bild füllt den ganzen Screen */
                 background-position: center;  /* Zentriert das Bild */
                 background-repeat: no-repeat; /* Wiederholt nicht */
