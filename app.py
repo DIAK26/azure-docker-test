@@ -6,43 +6,74 @@ app = Flask(__name__)
 
 @app.route("/")
 def home():
-    # Wir nutzen CSS direkt im HTML für den Hintergrund
     return (
         """
     <!DOCTYPE html>
     <html lang="de">
     <head>
         <meta charset="UTF-8">
-        <title>Azure Docker Test</title>
+        <title>Landing Rage</title>
         <style>
-            body {
-                /* Ersetze 'hintergrund.jpg' durch deinen Dateinamen */
-                background-image: url('static/LandingRage.jpg');
-                background-size: cover;       /* Bild füllt den ganzen Screen */
-                background-position: center;  /* Zentriert das Bild */
-                background-repeat: no-repeat; /* Wiederholt nicht */
-                height: 100vh;
+            * {
                 margin: 0;
-                color: white;                 /* Textfarbe weiß für besseren Kontrast */
+                padding: 0;
+                box-sizing: border-box;
+            }
+            body {
+                background-image: url('static/LandingRage.jpg');
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+                height: 100vh;
+                color: white;
                 font-family: Arial, sans-serif;
+                display: flex;
+                flex-direction: column;
             }
             .content {
                 display: flex;
                 flex-direction: column;
-                justify-content: center;
                 align-items: center;
-                height: 100%;
-                text-shadow: 2px 2px 4px #000000; /* Schatten für Lesbarkeit */
+                padding-top: 3vh;
+                text-shadow: 2px 2px 6px #000000;
+                text-align: center;
+                flex: 1;
+            }
+            .content h1 {
+                font-size: 2rem;
+                font-weight: bold;
+                margin-bottom: 0.5rem;
+                letter-spacing: 1px;
+            }
+            .content p {
+                font-size: 1rem;
+                margin-bottom: 0.4rem;
+                opacity: 0.9;
+            }
+            .stack {
+                margin-top: 0.8rem;
+                font-size: 0.85rem;
+                letter-spacing: 2px;
+                opacity: 0.75;
+                text-transform: uppercase;
+            }
+            .hostname {
+                font-size: 0.75rem;
+                opacity: 0.5;
+                margin-top: 0.4rem;
             }
         </style>
     </head>
     <body>
         <div class="content">
-            <h1>Hallo aus dem Docker-Container!</h1>
-            <p>Dies läuft auf: """
+            <h1>Proof of Concept.</h1>
+            <p>A containerized Flask app, deployed on an Azure Debian VM,</p>
+            <p>proxied through Nginx, automated via GitHub.</p>
+            <p>The rage was temporary. The pipeline is live.</p>
+            <div class="stack">Flask &middot; Podman &middot; Nginx &middot; Azure &middot; GitHub</div>
+            <div class="hostname">Container: """
         + os.uname().nodename
-        + """</p>
-            <p>Azure VM mit Hintergrundbild</p>
+        + """</div>
         </div>
     </body>
     </html>
