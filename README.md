@@ -63,7 +63,7 @@ Git
 🚀 Lokale Ausführung
 # Repository klonen
 git clone https://github.com/DIAK70/azure-docker-test.git
-cd DEIN-REPO
+cd azure-docker-test
 
 # Abhängigkeiten installieren
 pip install -r requirements.txt
