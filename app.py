@@ -27,17 +27,13 @@ def home():
                 height: 100vh;
                 color: white;
                 font-family: Arial, sans-serif;
-                display: flex;
-                flex-direction: column;
             }
             .content {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                padding-top: 3vh;
+                position: absolute;
+                top: 3vh;
+                right: 2vw;
                 text-shadow: 2px 2px 6px #000000;
-                text-align: center;
-                flex: 1;
+                text-align: left;
             }
             .content h1 {
                 font-size: 2rem;
@@ -49,6 +45,13 @@ def home():
                 font-size: 1rem;
                 margin-bottom: 0.4rem;
                 opacity: 0.9;
+            }
+            .claim {
+                font-size: 1rem;
+                margin-top: 1rem;
+                margin-bottom: 0.4rem;
+                opacity: 0.9;
+                font-weight: 600;
             }
             .stack {
                 margin-top: 0.8rem;
@@ -69,7 +72,7 @@ def home():
             <h1>Proof of Concept.</h1>
             <p>A containerized Flask app, deployed on an Azure Debian VM,</p>
             <p>proxied through Nginx, automated via GitHub.</p>
-            <p>The rage was temporary. The pipeline is live.</p>
+            <p class="claim">The rage was temporary. The pipeline is live.</p>
             <div class="stack">Flask &middot; Podman &middot; Nginx &middot; Azure &middot; GitHub</div>
             <div class="hostname">Container: """
         + os.uname().nodename
